@@ -9,15 +9,19 @@
 import UIKit
 import Alamofire
 
-class StoredCardViewController: UIViewController {
+class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var cardTxtFld: UITextField!
+    @IBOutlet weak var cardsTblVw: UITableView!
+    
     
     var accessToken: String = ""
     
     var price : String!
     
+    var storedCards = Array<StoredCredit>()
     
     override func viewDidLoad() {
         
@@ -91,13 +95,49 @@ class StoredCardViewController: UIViewController {
                     
                     if result is Dictionary<String, AnyObject>{
                         var storedCardResults = result as! Dictionary<String, AnyObject>
-                        print(storedCardResults["items"])
+                        
+                        let items = storedCardResults["items"]
+                        if items is Array<Dictionary<String, AnyObject>>{
+                            let cardItems = items as! Array<Dictionary<String, AnyObject>>
+                            for(_, card) in cardItems.enumerate(){
+                                self.storedCards.append(StoredCredit(info: card))
+                            }
+                            
+                            self.cardsTblVw.reloadData()
+                        }
                     }
                 }
                 
                 
         }
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storedCards.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cardCell")
+        
+        if cell == nil{
+            cell = UITableViewCell(style: .Default, reuseIdentifier: "cardCell")
+        }
+        
+        cell!.textLabel?.text = storedCards[indexPath.row].number
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        cardTxtFld.text = storedCards[indexPath.row].number
+        self.cardsTblVw.hidden = true
+    }
+    
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.cardsTblVw.hidden = false
+        return false
+    }
+    
     
     /*
      // MARK: - Navigation
