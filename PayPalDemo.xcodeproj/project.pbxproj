@@ -17,7 +17,8 @@
 		FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65A1D37F57300FE210E /* ConfirmationCreditViewController.swift */; };
 		FDBCB65D1D37F71D00FE210E /* StoredCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65C1D37F71D00FE210E /* StoredCardViewController.swift */; };
 		FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */; };
-		FDBCB66D1D381B7C00FE210E /* CreditCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */; };
+		FDF6592F1D3840FF0072DF0B /* CreditCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */; };
+		FDF659301D3840FF0072DF0B /* StoredCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,8 @@
 		FDBCB65A1D37F57300FE210E /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
 		FDBCB65C1D37F71D00FE210E /* StoredCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCardViewController.swift; sourceTree = "<group>"; };
 		FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
-		FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardModal.swift; sourceTree = "<group>"; };
+		FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardModal.swift; sourceTree = "<group>"; };
+		FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCredit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +90,8 @@
 		FDBCB6461D37E61100FE210E /* PayPalDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FDBCB6601D381A8C00FE210E /* Service Handlers */,
+				FDF6592C1D3840FF0072DF0B /* Modal */,
 				FDBCB6471D37E61100FE210E /* AppDelegate.swift */,
-				FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */,
 				FDBCB6491D37E61100FE210E /* ViewController.swift */,
 				FDBCB6561D37EAA000FE210E /* PaymentOptionViewController.swift */,
 				FDBCB6581D37F55100FE210E /* CreditCardInfoViewController.swift */,
@@ -104,11 +105,13 @@
 			path = PayPalDemo;
 			sourceTree = "<group>";
 		};
-		FDBCB6601D381A8C00FE210E /* Service Handlers */ = {
+		FDF6592C1D3840FF0072DF0B /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */,
+				FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */,
 			);
-			path = "Service Handlers";
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,12 +237,13 @@
 			files = (
 				FDBCB6571D37EAA000FE210E /* PaymentOptionViewController.swift in Sources */,
 				FDBCB65D1D37F71D00FE210E /* StoredCardViewController.swift in Sources */,
+				FDF6592F1D3840FF0072DF0B /* CreditCardModal.swift in Sources */,
 				FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */,
 				FDBCB6591D37F55100FE210E /* CreditCardInfoViewController.swift in Sources */,
 				FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */,
+				FDF659301D3840FF0072DF0B /* StoredCredit.swift in Sources */,
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */,
-				FDBCB66D1D381B7C00FE210E /* CreditCardModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

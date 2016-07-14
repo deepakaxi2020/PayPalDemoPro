@@ -89,7 +89,10 @@ class StoredCardViewController: UIViewController {
                 if statusCode == 200{
                     let result = response.result.value
                     
-                    
+                    if result is Dictionary<String, AnyObject>{
+                        var storedCardResults = result as! Dictionary<String, AnyObject>
+                        print(storedCardResults["items"])
+                    }
                 }
                 
                 
