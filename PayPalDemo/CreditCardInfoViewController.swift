@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var cardTxtFld: UITextField!
     @IBOutlet weak var cvvTxtFld: UITextField!
     @IBOutlet weak var visaTypeTxtFld: UITextField!
@@ -20,21 +20,23 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameTxtFld: UITextField!
     
     var accessToken: String = ""
-
+    
     var card = CreditCardModal()
     
     var price : String!
-
+    
+    var recallToken = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         oAuthForPaypal()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,18 +48,19 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         let validate = validateInfo()
         
         if validate.status && !self.accessToken.isEmpty {
-            
             callPayment()
+        }
+        else if validate.status && self.accessToken.isEmpty {
+            recallToken = true
+            oAuthForPaypal()
         }
         else{
             let alert = UIAlertController(title: nil, message: validate.message, preferredStyle: UIAlertControllerStyle.Alert)
-            
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-            
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-
+    
     func validateInfo() -> (status: Bool, message: String){
         
         if (cardTxtFld.text!.isEmpty) {
@@ -82,7 +85,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         }
         
         return (true, "User enter all inputs")
-
+        
     }
     
     func callPayment()
@@ -94,7 +97,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         card.cvv = cvvTxtFld.text
         card.firstName = firstNameTxtFld.text
         card.lastName = lastNameTxtFld.text
-
+        
         card.transaction = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
         
         let data:[String:AnyObject] = ["intent": "sale",
@@ -238,7 +241,12 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
                     
                     var sessionResponse = result as! Dictionary<String, AnyObject>
                     
-                    self.accessToken = sessionResponse["access_token"] as! String
+                    self.accessToken = sessionResponse["access_token"] as? String ?? ""
+                    
+                    if !self.accessToken.isEmpty && self.recallToken{
+                        self.recallToken = false
+                        self.callPayment()
+                    }
                 }
         }
     }
@@ -262,7 +270,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
             card.firstName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
         case lastNameTxtFld:
             card.lastName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
-
+            
         default:
             print("")
         }
@@ -270,13 +278,13 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
