@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C451E5771D383EB2005D2524 /* AlertViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451E5761D383EB2005D2524 /* AlertViewUtility.swift */; };
 		EECFC34BB19892E8CE1E3082 /* Pods_PayPalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */; };
 		FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6471D37E61100FE210E /* AppDelegate.swift */; };
 		FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6491D37E61100FE210E /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		058D5960EC4F98D133A3A65A /* Pods-PayPalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayPalDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo.release.xcconfig"; sourceTree = "<group>"; };
 		28768AEE360C133142C8FF98 /* Pods-PayPalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayPalDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayPalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C451E5761D383EB2005D2524 /* AlertViewUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewUtility.swift; sourceTree = "<group>"; };
 		FDBCB6441D37E61100FE210E /* PayPalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayPalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBCB6471D37E61100FE210E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBCB6491D37E61100FE210E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		FDBCB6461D37E61100FE210E /* PayPalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C451E5761D383EB2005D2524 /* AlertViewUtility.swift */,
 				FDBCB6601D381A8C00FE210E /* Service Handlers */,
 				FDBCB6471D37E61100FE210E /* AppDelegate.swift */,
 				FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */,
@@ -146,6 +149,7 @@
 				TargetAttributes = {
 					FDBCB6431D37E61100FE210E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XM24K3ZMFZ;
 					};
 				};
 			};
@@ -237,6 +241,7 @@
 				FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */,
 				FDBCB6591D37F55100FE210E /* CreditCardInfoViewController.swift in Sources */,
 				FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */,
+				C451E5771D383EB2005D2524 /* AlertViewUtility.swift in Sources */,
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */,
 				FDBCB66D1D381B7C00FE210E /* CreditCardModal.swift in Sources */,
@@ -346,9 +351,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Umer Farooq (FK4Y5B22X6)";
 				INFOPLIST_FILE = PayPalDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ttn.PayPalDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eureka.aerocinema-ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -359,9 +365,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Umer Farooq (FK4Y5B22X6)";
 				INFOPLIST_FILE = PayPalDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ttn.PayPalDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eureka.aerocinema-ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
