@@ -267,7 +267,6 @@
 				FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */,
 				FDF659301D3840FF0072DF0B /* StoredCredit.swift in Sources */,
 				C451E5851D384385005D2524 /* UIView.swift in Sources */,
-				FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */,
 				C451E5771D383EB2005D2524 /* AlertViewUtility.swift in Sources */,
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				C451E5821D384126005D2524 /* ACNavigationBar.swift in Sources */,
