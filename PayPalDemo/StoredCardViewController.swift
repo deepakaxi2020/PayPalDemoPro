@@ -18,6 +18,7 @@ class StoredCardViewController: UIViewController {
     
     var price : String!
     
+    var storedCards = Array<StoredCredit>()
     
     override func viewDidLoad() {
         
@@ -91,7 +92,14 @@ class StoredCardViewController: UIViewController {
                     
                     if result is Dictionary<String, AnyObject>{
                         var storedCardResults = result as! Dictionary<String, AnyObject>
-                        print(storedCardResults["items"])
+                        
+                        let items = storedCardResults["items"]
+                        if items is Array<Dictionary<String, AnyObject>>{
+                            let cardItems = items as! Array<Dictionary<String, AnyObject>>
+                            for(_, card) in cardItems.enumerate(){
+                                self.storedCards.append(StoredCredit(info: card))
+                            }
+                        }
                     }
                 }
                 
