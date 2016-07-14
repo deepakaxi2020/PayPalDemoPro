@@ -8,6 +8,29 @@
 
 import UIKit
 
-class CreditCardModal: NSObject {
+class CreditCardModal {
+    
+    var number : String!
+    
+    var type : String?
+    
+    var expireMonth : String!
+    
+    var expireYear : String!
+    
+    var cvv : String!
+    
+    var firstName : String!
+    
+    var lastName : String!
+    
+    var transaction : String!
+    
+    var currency : String!
+    
+    init(){
+        
+    }
 
+    
 }

@@ -20,6 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func firstOptionSelected(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("pushToPaymentOption", sender: "$100")
+    }
+    
+    @IBAction func secondOptionSelected(sender: AnyObject) {
+        self.performSegueWithIdentifier("pushToPaymentOption", sender: "$200")
 
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "pushToPaymentOption" {
+            let destinationVC = segue.destinationViewController as! PaymentOptionViewController
+            destinationVC.price = sender as! String
+        }
+    }
 }
 

@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EECFC34BB19892E8CE1E3082 /* Pods_PayPalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */; };
 		FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6471D37E61100FE210E /* AppDelegate.swift */; };
 		FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6491D37E61100FE210E /* ViewController.swift */; };
 		FDBCB64D1D37E61100FE210E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBCB64B1D37E61100FE210E /* Main.storyboard */; };
 		FDBCB64F1D37E61200FE210E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDBCB64E1D37E61200FE210E /* Assets.xcassets */; };
+		FDBCB6571D37EAA000FE210E /* PaymentOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6561D37EAA000FE210E /* PaymentOptionViewController.swift */; };
+		FDBCB6591D37F55100FE210E /* CreditCardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6581D37F55100FE210E /* CreditCardInfoViewController.swift */; };
+		FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65A1D37F57300FE210E /* ConfirmationCreditViewController.swift */; };
+		FDBCB65D1D37F71D00FE210E /* StoredCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65C1D37F71D00FE210E /* StoredCardViewController.swift */; };
+		FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */; };
+		FDBCB66D1D381B7C00FE210E /* CreditCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		058D5960EC4F98D133A3A65A /* Pods-PayPalDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayPalDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo.release.xcconfig"; sourceTree = "<group>"; };
+		28768AEE360C133142C8FF98 /* Pods-PayPalDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayPalDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayPalDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBCB6441D37E61100FE210E /* PayPalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayPalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBCB6471D37E61100FE210E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBCB6491D37E61100FE210E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDBCB64C1D37E61100FE210E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDBCB64E1D37E61200FE210E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDBCB6501D37E61200FE210E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDBCB6561D37EAA000FE210E /* PaymentOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOptionViewController.swift; sourceTree = "<group>"; };
+		FDBCB6581D37F55100FE210E /* CreditCardInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardInfoViewController.swift; sourceTree = "<group>"; };
+		FDBCB65A1D37F57300FE210E /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
+		FDBCB65C1D37F71D00FE210E /* StoredCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCardViewController.swift; sourceTree = "<group>"; };
+		FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
+		FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECFC34BB19892E8CE1E3082 /* Pods_PayPalDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D21EADC5FF78FC8A4DB02BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D161353330436981849201D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28768AEE360C133142C8FF98 /* Pods-PayPalDemo.debug.xcconfig */,
+				058D5960EC4F98D133A3A65A /* Pods-PayPalDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FDBCB63B1D37E61100FE210E = {
 			isa = PBXGroup;
 			children = (
 				FDBCB6461D37E61100FE210E /* PayPalDemo */,
 				FDBCB6451D37E61100FE210E /* Products */,
+				D161353330436981849201D0 /* Pods */,
+				4D21EADC5FF78FC8A4DB02BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +88,27 @@
 		FDBCB6461D37E61100FE210E /* PayPalDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FDBCB6601D381A8C00FE210E /* Service Handlers */,
 				FDBCB6471D37E61100FE210E /* AppDelegate.swift */,
+				FDBCB66C1D381B7C00FE210E /* CreditCardModal.swift */,
 				FDBCB6491D37E61100FE210E /* ViewController.swift */,
+				FDBCB6561D37EAA000FE210E /* PaymentOptionViewController.swift */,
+				FDBCB6581D37F55100FE210E /* CreditCardInfoViewController.swift */,
+				FDBCB65A1D37F57300FE210E /* ConfirmationCreditViewController.swift */,
+				FDBCB65C1D37F71D00FE210E /* StoredCardViewController.swift */,
+				FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */,
 				FDBCB64B1D37E61100FE210E /* Main.storyboard */,
 				FDBCB64E1D37E61200FE210E /* Assets.xcassets */,
 				FDBCB6501D37E61200FE210E /* Info.plist */,
 			);
 			path = PayPalDemo;
+			sourceTree = "<group>";
+		};
+		FDBCB6601D381A8C00FE210E /* Service Handlers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Service Handlers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDBCB6531D37E61200FE210E /* Build configuration list for PBXNativeTarget "PayPalDemo" */;
 			buildPhases = (
+				E43D48BDA53CCB0D39DBB038 /* [CP] Check Pods Manifest.lock */,
 				FDBCB6401D37E61100FE210E /* Sources */,
 				FDBCB6411D37E61100FE210E /* Frameworks */,
 				FDBCB6421D37E61100FE210E /* Resources */,
+				AB761EAF4665A59873ABC720 /* [CP] Embed Pods Frameworks */,
+				E443B7A3351DE3A0F6AE4F2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,13 +179,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AB761EAF4665A59873ABC720 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E43D48BDA53CCB0D39DBB038 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E443B7A3351DE3A0F6AE4F2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PayPalDemo/Pods-PayPalDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FDBCB6401D37E61100FE210E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBCB6571D37EAA000FE210E /* PaymentOptionViewController.swift in Sources */,
+				FDBCB65D1D37F71D00FE210E /* StoredCardViewController.swift in Sources */,
+				FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */,
+				FDBCB6591D37F55100FE210E /* CreditCardInfoViewController.swift in Sources */,
+				FDBCB65B1D37F57300FE210E /* ConfirmationCreditViewController.swift in Sources */,
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */,
+				FDBCB66D1D381B7C00FE210E /* CreditCardModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +342,7 @@
 		};
 		FDBCB6541D37E61200FE210E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28768AEE360C133142C8FF98 /* Pods-PayPalDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -247,6 +355,7 @@
 		};
 		FDBCB6551D37E61200FE210E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058D5960EC4F98D133A3A65A /* Pods-PayPalDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -276,6 +385,7 @@
 				FDBCB6551D37E61200FE210E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

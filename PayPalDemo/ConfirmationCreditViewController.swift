@@ -9,12 +9,20 @@
 import UIKit
 
 class ConfirmationCreditViewController: UIViewController {
+    
+    @IBOutlet weak var priceLbl: UILabel!
+
+    var price : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        priceLbl.text = price
+
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
