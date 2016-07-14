@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "733168FA359AEBFE2FE8AACA52BEF386"
-               BuildableName = "Pods_PayPalDemo.framework"
-               BlueprintName = "Pods-PayPalDemo"
+               BlueprintIdentifier = "115A5CF24C35987B78E6D6C8B638191D"
+               BuildableName = "SwiftSpinner.framework"
+               BlueprintName = "SwiftSpinner"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "733168FA359AEBFE2FE8AACA52BEF386"
-            BuildableName = "Pods_PayPalDemo.framework"
-            BlueprintName = "Pods-PayPalDemo"
+            BlueprintIdentifier = "115A5CF24C35987B78E6D6C8B638191D"
+            BuildableName = "SwiftSpinner.framework"
+            BlueprintName = "SwiftSpinner"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "115A5CF24C35987B78E6D6C8B638191D"
+            BuildableName = "SwiftSpinner.framework"
+            BlueprintName = "SwiftSpinner"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
