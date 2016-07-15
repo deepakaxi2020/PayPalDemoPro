@@ -212,15 +212,26 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
                 if result is Dictionary<String, AnyObject>{
                     var storedCardResults = result as! Dictionary<String, AnyObject>
                     
-                    let state = storedCardResults["state"] as! String
+                    var message = ""
                     
-                    if state == "approved"{
+                    if let _ = storedCardResults["state"]{
+                        let state = storedCardResults["state"] as! String
                         
-                        let message = "Your order has been placed successfully and your order is " + (storedCardResults["id"] as! String)
-                        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
+                        if state == "approved"{
+                            message = "Your order has been placed successfully and your payment id is " + (storedCardResults["id"] as! String)
+                        }
+                        else{
+                            message = "Something goes wrong! Please validate your data or try again"
+                            
+                        }
                     }
+                    else{
+                        message = "Something goes wrong! Please validate your data"
+                    }
+                    
+                    let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
         
         }
