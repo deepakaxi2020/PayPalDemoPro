@@ -12,6 +12,8 @@ import SwiftSpinner
 
 class PayPalViewController: UIViewController {
 
+    @IBOutlet weak var emailTxtFld: UITextField!
+
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     var selectedProduct :Product!
@@ -46,13 +48,36 @@ class PayPalViewController: UIViewController {
     
     @IBAction func okBtnTapped(sender: AnyObject) {
         
+        var message = ""
+        if emailTxtFld.text!.isEmpty{
+            message = "Please enter email id"
+        }
+        else if !isValidEmail(emailTxtFld.text!){
+            message = "Email id is not correct"
+        }
+        
+        if !message.isEmpty {
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
         callPayment()
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
     }
 
     func callPayment()    {
         
         SwiftSpinner.show("Connecting with Paypal...")
-        let value = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
+        let value = selectedProduct.price!.stringByReplacingOccurrencesOfString("$", withString: "")
 
         let data:[String:AnyObject] = [
                 "intent":"sale",
@@ -96,9 +121,29 @@ class PayPalViewController: UIViewController {
                         for (_, link) in self.paypalInfo.links!.enumerate(){
                             if link.rel == "approval_url"{
                                 
-                                let alert = UIAlertController(title: nil, message: ("Please open given url in browser \"" + link.href!) + "\"", preferredStyle: UIAlertControllerStyle.Alert)
+                                let emailSendUrl = "http://saade.in/sendConfirmEmail.php"
+                                
+                                let params = ["email" : self.emailTxtFld.text!, "approval_url" : link.href!]
+
+                                print(params)
+                                
+                                Alamofire.request(.POST, emailSendUrl, parameters: params, encoding: .JSON, headers: header)
+                                    .responseJSON { (response) in
+                                        
+                                        print(response.response!.statusCode)
+                                        
+                                        let alert = UIAlertController(title: nil, message:"Please check your email for further payment", preferredStyle: UIAlertControllerStyle.Alert)
+                                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                                        self.presentViewController(alert, animated: true, completion: nil)
+                                        
+                                        
+                                }
+                                
+                                /*let alert = UIAlertController(title: nil, message: ("Please open given url in browser \"" + link.href!) + "\"", preferredStyle: UIAlertControllerStyle.Alert)
                                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-                                self.presentViewController(alert, animated: true, completion: nil)
+                                self.presentViewController(alert, animated: true, completion: nil)*/
+                                
+                                
                                 break;
                             }
                         }

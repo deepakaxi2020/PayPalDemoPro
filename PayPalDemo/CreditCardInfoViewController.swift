@@ -339,11 +339,26 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         case cardTxtFld:
             card.number = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
         case cvvTxtFld:
-            card.cvv =  (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            let str =  (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            if str.characters.count > 3 {
+                return false
+            }
+            card.cvv = str
+
         case mmTxtFld:
-            card.expireMonth = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            let str =  (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            if str.characters.count > 2 {
+                return false
+            }
+            
+            card.expireMonth = str
         case yearTxtFld:
-            card.expireYear = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            
+            let str =  (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
+            if str.characters.count > 4 {
+                return false
+            }
+            card.expireYear = str
         case firstNameTxtFld:
             card.firstName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
         case lastNameTxtFld:
