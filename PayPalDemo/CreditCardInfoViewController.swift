@@ -274,7 +274,6 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
                 }
                 
         }
-        
     }
     
     func oAuthForPaypal()

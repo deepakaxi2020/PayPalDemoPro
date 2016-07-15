@@ -24,6 +24,7 @@
 		FDBCB65F1D380B0C00FE210E /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */; };
 		FDF6592F1D3840FF0072DF0B /* CreditCardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */; };
 		FDF659301D3840FF0072DF0B /* StoredCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */; };
+		FDF659321D3878F60072DF0B /* PaypalCreditModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF659311D3878F60072DF0B /* PaypalCreditModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FDBCB65E1D380B0C00FE210E /* PayPalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
 		FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardModal.swift; sourceTree = "<group>"; };
 		FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCredit.swift; sourceTree = "<group>"; };
+		FDF659311D3878F60072DF0B /* PaypalCreditModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaypalCreditModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */,
 				FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */,
 				C451E5861D386F65005D2524 /* Product.swift */,
+				FDF659311D3878F60072DF0B /* PaypalCreditModal.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				FDF659301D3840FF0072DF0B /* StoredCredit.swift in Sources */,
 				C451E5851D384385005D2524 /* UIView.swift in Sources */,
 				C451E5771D383EB2005D2524 /* AlertViewUtility.swift in Sources */,
+				FDF659321D3878F60072DF0B /* PaypalCreditModal.swift in Sources */,
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				C451E5821D384126005D2524 /* ACNavigationBar.swift in Sources */,
 				FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */,
