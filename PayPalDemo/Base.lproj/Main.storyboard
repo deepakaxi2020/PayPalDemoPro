@@ -530,6 +530,9 @@
                                 <rect key="frame" x="665" y="485" width="250" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okBtnTapped:" destination="89T-gr-FMb" eventType="primaryActionTriggered" id="bBT-ht-j9c"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

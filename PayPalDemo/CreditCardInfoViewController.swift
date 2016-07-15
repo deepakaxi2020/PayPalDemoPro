@@ -199,13 +199,9 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
                       "Authorization":  "Bearer " + accessToken ]
         
         Alamofire.request(.POST, path, parameters: data, encoding: .JSON, headers: header)
-            
             .responseJSON { (response) in
-                
                 print(response.result.value)
-                
         }
-        
     }
     
     func oAuthForPaypal()
@@ -236,9 +232,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
                 
                 let result = response.result.value
                 if (result is Dictionary<String, AnyObject>){
-                    
                     var sessionResponse = result as! Dictionary<String, AnyObject>
-                    
                     self.accessToken = sessionResponse["access_token"] as? String ?? ""
                     
                     if !self.accessToken.isEmpty && self.recallToken{
