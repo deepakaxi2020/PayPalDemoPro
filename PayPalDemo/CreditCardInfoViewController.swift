@@ -363,7 +363,6 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
             card.firstName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
         case lastNameTxtFld:
             card.lastName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString:string)
-            
         default:
             print("")
         }
