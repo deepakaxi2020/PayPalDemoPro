@@ -500,52 +500,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BgImage" translatesAutoresizingMaskIntoConstraints="NO" id="M5C-rM-n2u">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PayPal Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX4-Mc-mgv">
                                 <rect key="frame" x="717" y="156" width="486" height="76"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="55"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-11-6FN">
-                                <rect key="frame" x="624" y="281" width="676" height="307"/>
+                                <rect key="frame" x="624" y="281" width="676" height="377"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbj-Sg-ga2">
-                                        <rect key="frame" x="43" y="118" width="212" height="51"/>
+                                        <rect key="frame" x="26" y="163" width="212" height="51"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-s6-WaH">
-                                        <rect key="frame" x="278" y="118" width="388" height="51"/>
+                                        <rect key="frame" x="348" y="163" width="329" height="51"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDF-Bk-NDi">
-                                        <rect key="frame" x="43" y="13" width="227" height="51"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-70-k1g">
-                                        <rect key="frame" x="259" y="13" width="407" height="46"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-ol-CIm">
-                                        <rect key="frame" x="38" y="203" width="279" height="86"/>
-                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <state key="normal" title="OK"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me3-hF-M27">
-                                        <rect key="frame" x="43" y="72" width="212" height="51"/>
+                                        <rect key="frame" x="26" y="93" width="212" height="51"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LM-nB-pEL">
-                                        <rect key="frame" x="278" y="72" width="388" height="51"/>
+                                        <rect key="frame" x="348" y="93" width="329" height="51"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-ol-CIm">
+                                        <rect key="frame" x="26" y="260" width="279" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="OK"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDF-Bk-NDi">
+                                        <rect key="frame" x="28" y="28" width="227" height="51"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-70-k1g">
+                                        <rect key="frame" x="331" y="28" width="337" height="46"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -555,10 +552,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzH-JQ-ydn">
-                                <rect key="frame" x="969" y="485" width="309" height="86"/>
+                                <rect key="frame" x="965" y="541" width="309" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="CANCEL"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BgImage" translatesAutoresizingMaskIntoConstraints="NO" id="M5C-rM-n2u">
+                                <rect key="frame" x="2" y="0.0" width="1920" height="1080"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
