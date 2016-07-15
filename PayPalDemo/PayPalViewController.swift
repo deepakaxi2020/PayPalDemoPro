@@ -132,16 +132,12 @@ class PayPalViewController: UIViewController {
                                         
                                         print(response.response!.statusCode)
                                         
-                                        let alert = UIAlertController(title: nil, message:"Please check your email for further payment", preferredStyle: UIAlertControllerStyle.Alert)
+                                        let alert = UIAlertController(title: nil, message: ("Please check your email for further payment or open given url in browser \"" + link.href!) + "\"", preferredStyle: UIAlertControllerStyle.Alert)
                                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
                                         self.presentViewController(alert, animated: true, completion: nil)
                                         
                                         
                                 }
-                                
-                                /*let alert = UIAlertController(title: nil, message: ("Please open given url in browser \"" + link.href!) + "\"", preferredStyle: UIAlertControllerStyle.Alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-                                self.presentViewController(alert, animated: true, completion: nil)*/
                                 
                                 
                                 break;
