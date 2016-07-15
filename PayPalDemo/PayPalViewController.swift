@@ -10,6 +10,7 @@ import UIKit
 
 class PayPalViewController: UIViewController {
 
+    @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     var selectedProduct :Product!
 
@@ -20,6 +21,7 @@ class PayPalViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         priceLbl.text = "$ \(selectedProduct.price!)"
+        productName.text = "$ \(selectedProduct.productName!)"
     }
 
     override func didReceiveMemoryWarning() {
