@@ -88,9 +88,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func callPayment()
-        
-    {
+    func callPayment()    {
         card.number = cardTxtFld.text
         card.expireMonth = mmTxtFld.text
         card.expireYear = yearTxtFld.text

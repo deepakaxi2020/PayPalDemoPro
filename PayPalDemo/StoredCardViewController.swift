@@ -16,6 +16,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cardTxtFld: UITextField!
     @IBOutlet weak var cardsTblVw: UITableView!
     
+    var selectedCard : StoredCredit!
     
     var accessToken: String = ""
     
@@ -129,6 +130,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         cardTxtFld.text = storedCards[indexPath.row].number
+        selectedCard = storedCards[indexPath.row]
         self.cardsTblVw.hidden = true
     }
     
@@ -137,6 +139,67 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
         self.cardsTblVw.hidden = false
         return false
     }
+    
+    
+    @IBAction func proceedBtbTapped(sender: AnyObject) {
+        
+        if (!cardTxtFld.text!.isEmpty) {
+            callPayment()
+        }
+        else{
+            let alert = UIAlertController(title: nil, message: "Please select any stored credit", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func callPayment()    {
+        
+        let value = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
+        
+        let data:[String:AnyObject] = [
+                                        "intent": "sale",
+                                       "payer": [
+                                            "payment_method": "credit_card",
+                                            "funding_instruments":[
+                                            [
+                                                    "credit_card_token": [
+                                                    "credit_card_id": selectedCard.id,
+                                                    "payer_id": selectedCard.payerId
+                                                ]
+                                            ]
+                                        ]
+                                    ],
+                                       "transactions":[
+                                        [
+                                            "amount":[
+                                                "total": value,
+                                                "currency": "USD"
+                                            ],
+                                            "description": "This is the payment transaction description."
+                                        ]
+                                    ]
+                                ]
+        
+        let path = "https://api.sandbox.paypal.com/v1/payments/payment"
+        
+        
+        print(data)
+        let header = ["Content-Type": "application/json",
+                      
+                      "Authorization":  "Bearer " + accessToken ]
+        
+        Alamofire.request(.POST, path, parameters: data, encoding: .JSON, headers: header)
+            
+            .responseJSON { (response) in
+                
+                print(response.result.value)
+                
+        }
+        
+    }
+    
     
     
     /*

@@ -228,6 +228,9 @@
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <state key="normal" title="Proceed to pay"/>
+                                        <connections>
+                                            <action selector="proceedBtbTapped:" destination="7mC-VV-RLC" eventType="primaryActionTriggered" id="aVI-Gh-YQe"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk2-Rr-eC2">
                                         <rect key="frame" x="76" y="223" width="222" height="51"/>
