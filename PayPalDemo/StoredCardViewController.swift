@@ -32,7 +32,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
         
-        priceLbl.text = selectedProduct.price
+        priceLbl.text = "$ \(selectedProduct.price)"
         productName.text = selectedProduct.productName
     }
     
