@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SwiftSpinner
 class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     
@@ -43,6 +43,8 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     func oAuthForPaypal()
     {
+        
+        SwiftSpinner.show("Please wait...")
         let clientKey = "Ab72r9x_EvXqOCuehK3pa64nkD7cLo7oJqItLJElOKQQayVHYenoidSKwZh5O63VsFmg7kfxBqxlvv_R"
         
         let clientSecret = "EMI_F-tF-SGWTfD3vnQdXg3ZiNsG0bibQnYDpMcEbKv4Bi9-YLGNI1B2Ey9pqUFxQe-Q4d2NLt7kdEMr"
@@ -67,15 +69,21 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
                 
                 let result = response.result.value
                 if (result is Dictionary<String, AnyObject>){
-                    
-                    var sessionResponse = result as! Dictionary<String, AnyObject>
-                    
-                    self.accessToken = sessionResponse["access_token"] as? String ?? ""
-                    
-                    if !self.accessToken.isEmpty{
+                    let statusCode = response.response?.statusCode
+                    if statusCode == 200{
+                        var sessionResponse = result as! Dictionary<String, AnyObject>
                         
-                        self.getStoredCredits()
+                        self.accessToken = sessionResponse["access_token"] as? String ?? ""
+                        
+                        if !self.accessToken.isEmpty{
+                            
+                            self.getStoredCredits()
+                        }
                     }
+                    else{
+                        SwiftSpinner.hide()
+                    }
+                   
                 }
         }
     }
@@ -90,7 +98,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
             .responseJSON { (response) in
                 
                 let statusCode = response.response?.statusCode
-                
+                SwiftSpinner.hide()
                 if statusCode == 200{
                     let result = response.result.value
                     
@@ -123,7 +131,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
         if cell == nil{
             cell = UITableViewCell(style: .Default, reuseIdentifier: "cardCell")
         }
-        
+        cell!.textLabel?.font = UIFont(name: "Avenir", size: 35.0)
         cell!.textLabel?.text = storedCards[indexPath.row].number
         return cell!
     }
@@ -156,6 +164,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     func callPayment()    {
         
+        SwiftSpinner.show("Payment in progress...")
         let value = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
         
         let data:[String:AnyObject] = [
@@ -193,14 +202,28 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
         Alamofire.request(.POST, path, parameters: data, encoding: .JSON, headers: header)
             
             .responseJSON { (response) in
-                
+                SwiftSpinner.hide()
                 print(response.result.value)
                 
-        }
+                let result = response.result.value
+                
+                if result is Dictionary<String, AnyObject>{
+                    var storedCardResults = result as! Dictionary<String, AnyObject>
+                    
+                    let state = storedCardResults["state"] as! String
+                    
+                    if state == "approved"{
+                        
+                        let message = "Your order has been placed successfully and your order is " + (storedCardResults["id"] as! String)
+                        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                }
         
+        }
+    
     }
-    
-    
     
     /*
      // MARK: - Navigation

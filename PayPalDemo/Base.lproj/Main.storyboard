@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="neg-iL-N4R">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="neg-iL-N4R">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -147,10 +147,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-hp-5Ui">
-                                        <rect key="frame" x="51" y="80" width="459" height="86"/>
+                                        <rect key="frame" x="51" y="77" width="459" height="92"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="38"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <state key="normal" title="Stored Card"/>
+                                        <state key="normal" title="Saved Card"/>
                                         <connections>
                                             <action selector="storedCardBtnTapped:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="2vE-hF-ftV"/>
                                         </connections>
@@ -378,6 +378,9 @@
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                         <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearClick:" destination="o2j-tG-3m7" eventType="primaryActionTriggered" id="LiZ-KC-gV5"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2021" borderStyle="roundedRect" placeholder="YEAR" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSi-y1-QmJ">
                                         <rect key="frame" x="391" y="169" width="122" height="46"/>
@@ -400,7 +403,10 @@
                                         <rect key="frame" x="356" y="402" width="313" height="95"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                        <state key="normal" title="Autofill"/>
+                                        <state key="normal" title="Demo"/>
+                                        <connections>
+                                            <action selector="autoFillClick:" destination="o2j-tG-3m7" eventType="primaryActionTriggered" id="8rS-aY-cay"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>

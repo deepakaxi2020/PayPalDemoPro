@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
 
 class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
     
@@ -27,13 +28,59 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
     
     var recallToken = false
     
+    func getDataForPrefill() -> [String] {
+        let array = ["4137355596240776",
+                     "874",
+                     "8",
+                     "2021",
+                     "Betsy",
+                     "Buyer"]
+        return array
+    }
+    func getTextFields() -> [UITextField]
+    {
+        return [cardTxtFld,
+        cvvTxtFld,
+        mmTxtFld,
+        yearTxtFld,
+        firstNameTxtFld,
+        lastNameTxtFld]
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for  textField in getTextFields()
+        {
+            textField.text = ""
+        }
         // Do any additional setup after loading the view.
+    }
+    /*
+     function to clear form data
+     */
+    @IBAction func clearClick(sender: AnyObject) {
+        for  textField in getTextFields()
+        {
+            textField.text = ""
+        }
+    }
+    
+    /*
+     function to autofill form data
+ */
+    @IBAction func autoFillClick(sender: AnyObject) {
+        
+        let dataArray = getDataForPrefill()
+        let textFieldArray = getTextFields()
+        for i in 0..<dataArray.count {
+            textFieldArray[i].text = dataArray[i]
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
+        SwiftSpinner.show("Please wait...")
         oAuthForPaypal()
     }
     
@@ -89,6 +136,9 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     func callPayment()    {
+        
+        SwiftSpinner.show("Please wait ..")
+
         card.number = cardTxtFld.text
         card.expireMonth = mmTxtFld.text
         card.expireYear = yearTxtFld.text
@@ -201,8 +251,27 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         Alamofire.request(.POST, path, parameters: data, encoding: .JSON, headers: header)
             
             .responseJSON { (response) in
-                
+                SwiftSpinner.hide()
                 print(response.result.value)
+                
+                let result = response.result.value
+                for  textField in self.getTextFields()
+                {
+                    textField.text = ""
+                }
+                if result is Dictionary<String, AnyObject>{
+                    var storedCardResults = result as! Dictionary<String, AnyObject>
+                    
+                    let state = storedCardResults["state"] as! String
+                    
+                    if state == "approved"{
+                        
+                        let message = "Your order has been placed successfully and your order is " + (storedCardResults["id"] as! String)
+                        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                }
                 
         }
         
@@ -235,17 +304,29 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
             .responseJSON { response in
                 
                 let result = response.result.value
-                if (result is Dictionary<String, AnyObject>){
-                    
-                    var sessionResponse = result as! Dictionary<String, AnyObject>
-                    
-                    self.accessToken = sessionResponse["access_token"] as? String ?? ""
-                    
-                    if !self.accessToken.isEmpty && self.recallToken{
-                        self.recallToken = false
-                        self.callPayment()
+                
+                let statusCode = response.response?.statusCode
+
+                if statusCode == 200{
+                    if (result is Dictionary<String, AnyObject>){
+                        
+                        var sessionResponse = result as! Dictionary<String, AnyObject>
+                        
+                        self.accessToken = sessionResponse["access_token"] as? String ?? ""
+                        
+                        if !self.accessToken.isEmpty && self.recallToken{
+                            self.recallToken = false
+                            self.callPayment()
+                        }
+                        else{
+                            SwiftSpinner.hide()
+                        }
                     }
                 }
+                else{
+                    SwiftSpinner.hide()
+                }
+                
         }
     }
     
