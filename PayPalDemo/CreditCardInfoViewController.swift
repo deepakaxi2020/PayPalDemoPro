@@ -23,8 +23,8 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
     var accessToken: String = ""
     
     var card = CreditCardModal()
-    
-    var price : String!
+    var selectedProduct :Product!
+
     
     var recallToken = false
     
@@ -146,7 +146,7 @@ class CreditCardInfoViewController: UIViewController, UITextFieldDelegate {
         card.firstName = firstNameTxtFld.text
         card.lastName = lastNameTxtFld.text
         
-        card.transaction = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
+        card.transaction = self.selectedProduct.price!.stringByReplacingOccurrencesOfString("$", withString: "")
         
         let data:[String:AnyObject] = ["intent": "sale",
                                        

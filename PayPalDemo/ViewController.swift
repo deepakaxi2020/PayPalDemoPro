@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    func productArray() -> [Product] {
+        let p1 = Product()
+        p1.price = "100"
+        p1.productName = "Product 1"
+        let p2 = Product()
+        p2.price = "200"
+        p2.productName = "Product 2"
+        let array = [p1,p2]
+        return array
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,18 +32,26 @@ class ViewController: UIViewController {
 
     @IBAction func firstOptionSelected(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("pushToPaymentOption", sender: "$100")
+        let p1 = Product()
+        p1.price = "100"
+        p1.productName = "Product 1"
+
+        self.performSegueWithIdentifier("pushToPaymentOption", sender: p1)
     }
     
     @IBAction func secondOptionSelected(sender: AnyObject) {
-        self.performSegueWithIdentifier("pushToPaymentOption", sender: "$200")
+        let p2 = Product()
+        p2.price = "200"
+        p2.productName = "Product 2"
+        self.performSegueWithIdentifier("pushToPaymentOption", sender: p2)
 
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "pushToPaymentOption" {
             let destinationVC = segue.destinationViewController as! PaymentOptionViewController
-            destinationVC.price = sender as! String
+            
+            destinationVC.selectedProduct = sender as? Product
         }
     }
 }

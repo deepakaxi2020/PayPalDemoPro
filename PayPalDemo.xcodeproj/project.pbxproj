@@ -11,6 +11,7 @@
 		C451E5821D384126005D2524 /* ACNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451E5801D384126005D2524 /* ACNavigationBar.swift */; };
 		C451E5831D384126005D2524 /* ACNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C451E5811D384126005D2524 /* ACNavigationBar.xib */; };
 		C451E5851D384385005D2524 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451E5841D384385005D2524 /* UIView.swift */; };
+		C451E5871D386F65005D2524 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451E5861D386F65005D2524 /* Product.swift */; };
 		EECFC34BB19892E8CE1E3082 /* Pods_PayPalDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AF7FD37C0ED85AC5774586 /* Pods_PayPalDemo.framework */; };
 		FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6471D37E61100FE210E /* AppDelegate.swift */; };
 		FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBCB6491D37E61100FE210E /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		C451E5801D384126005D2524 /* ACNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACNavigationBar.swift; sourceTree = "<group>"; };
 		C451E5811D384126005D2524 /* ACNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACNavigationBar.xib; sourceTree = "<group>"; };
 		C451E5841D384385005D2524 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PayPalDemo/UIView.swift; sourceTree = "<group>"; };
+		C451E5861D386F65005D2524 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FDBCB6441D37E61100FE210E /* PayPalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayPalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBCB6471D37E61100FE210E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDBCB6491D37E61100FE210E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +114,6 @@
 			children = (
 				FDF6592C1D3840FF0072DF0B /* Modal */,
 				C451E5761D383EB2005D2524 /* AlertViewUtility.swift */,
-				FDBCB6601D381A8C00FE210E /* Service Handlers */,
 				FDBCB6471D37E61100FE210E /* AppDelegate.swift */,
 				FDBCB6491D37E61100FE210E /* ViewController.swift */,
 				FDBCB6561D37EAA000FE210E /* PaymentOptionViewController.swift */,
@@ -132,6 +133,7 @@
 			children = (
 				FDF6592D1D3840FF0072DF0B /* CreditCardModal.swift */,
 				FDF6592E1D3840FF0072DF0B /* StoredCredit.swift */,
+				C451E5861D386F65005D2524 /* Product.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -271,6 +273,7 @@
 				FDBCB64A1D37E61100FE210E /* ViewController.swift in Sources */,
 				C451E5821D384126005D2524 /* ACNavigationBar.swift in Sources */,
 				FDBCB6481D37E61100FE210E /* AppDelegate.swift in Sources */,
+				C451E5871D386F65005D2524 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

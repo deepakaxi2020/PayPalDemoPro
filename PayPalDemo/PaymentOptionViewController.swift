@@ -11,6 +11,7 @@ import UIKit
 class PaymentOptionViewController: UIViewController {
     
     var price : String!
+    var selectedProduct :Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +26,15 @@ class PaymentOptionViewController: UIViewController {
     
 
     @IBAction func creditCardBtnTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("pushToCreditCard", sender: price)
+        self.performSegueWithIdentifier("pushToCreditCard", sender: selectedProduct)
     }
     
     @IBAction func storedCardBtnTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("pushToStoredCard", sender: price)
+        self.performSegueWithIdentifier("pushToStoredCard", sender: selectedProduct)
     }
     
     @IBAction func paypalBtnTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("pushToPayPal", sender: price)
+        self.performSegueWithIdentifier("pushToPayPal", sender: selectedProduct)
     }
     
     // MARK: - Navigation
@@ -46,13 +47,13 @@ class PaymentOptionViewController: UIViewController {
         switch segue.identifier! {
         case "pushToCreditCard":
             let destinationVC = segue.destinationViewController as! CreditCardInfoViewController
-            destinationVC.price = sender as! String
+            destinationVC.selectedProduct = sender as? Product
         case "pushToStoredCard":
             let destinationVC = segue.destinationViewController as! StoredCardViewController
-            destinationVC.price = sender as! String
+            destinationVC.selectedProduct = sender as? Product
         default:
             let destinationVC = segue.destinationViewController as! PayPalViewController
-            destinationVC.price = sender as! String
+            destinationVC.selectedProduct = sender as? Product
         }
     }
     

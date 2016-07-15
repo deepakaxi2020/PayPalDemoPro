@@ -11,15 +11,15 @@ import UIKit
 class PayPalViewController: UIViewController {
 
     @IBOutlet weak var priceLbl: UILabel!
-    
-    var price : String!
+    var selectedProduct :Product!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        priceLbl.text = price
+        priceLbl.text = "$ \(selectedProduct.price!)"
     }
 
     override func didReceiveMemoryWarning() {

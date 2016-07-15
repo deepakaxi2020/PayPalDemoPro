@@ -12,6 +12,7 @@ import SwiftSpinner
 class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     
+    @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var cardTxtFld: UITextField!
     @IBOutlet weak var cardsTblVw: UITableView!
@@ -20,8 +21,8 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     
     var accessToken: String = ""
     
-    var price : String!
-    
+    var selectedProduct :Product!
+
     var storedCards = Array<StoredCredit>()
     
     override func viewDidLoad() {
@@ -31,7 +32,8 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
         
-        priceLbl.text = price
+        priceLbl.text = selectedProduct.price
+        productName.text = selectedProduct.productName
     }
     
     
@@ -165,7 +167,7 @@ class StoredCardViewController: UIViewController, UITextFieldDelegate {
     func callPayment()    {
         
         SwiftSpinner.show("Payment in progress...")
-        let value = self.price.stringByReplacingOccurrencesOfString("$", withString: "")
+        let value = self.selectedProduct.price!.stringByReplacingOccurrencesOfString("$", withString: "")
         
         let data:[String:AnyObject] = [
                                         "intent": "sale",

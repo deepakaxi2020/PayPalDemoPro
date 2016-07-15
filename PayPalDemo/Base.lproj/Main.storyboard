@@ -274,6 +274,7 @@
                         <outlet property="cardTxtFld" destination="AJh-Hr-D0i" id="f3C-9E-pjK"/>
                         <outlet property="cardsTblVw" destination="DsN-pI-eBM" id="Ib9-ra-CEy"/>
                         <outlet property="priceLbl" destination="aOb-5z-D2d" id="WLS-3C-OMo"/>
+                        <outlet property="productName" destination="5ko-w4-lOH" id="L1v-EM-b7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFU-dz-WRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
