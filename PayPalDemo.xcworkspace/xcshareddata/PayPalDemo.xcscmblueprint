@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A24D3654EF099BA575C9527F8A3CE059980DD08E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "59709C44DE932823C440266AC6E669667B9E3872" : 0,
+    "A24D3654EF099BA575C9527F8A3CE059980DD08E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1CAA1508-0FAB-428B-BC9C-88B7E590B918",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "59709C44DE932823C440266AC6E669667B9E3872" : "",
+    "A24D3654EF099BA575C9527F8A3CE059980DD08E" : "PayPalDemoPro\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PayPalDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PayPalDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.intelligrape.net:mobility\/ttn-tv-poc-apple.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "59709C44DE932823C440266AC6E669667B9E3872"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/deepakaxi2020\/PayPalDemoPro.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A24D3654EF099BA575C9527F8A3CE059980DD08E"
+    }
+  ]
+}
