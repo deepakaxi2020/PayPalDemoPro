@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqd-1X-5gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3422" y="297"/>
+            <point key="canvasLocation" x="-4142" y="849"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0kI-7R-MhR">
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN8-bh-vd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1427" y="901"/>
+            <point key="canvasLocation" x="-1803" y="849"/>
         </scene>
         <!--Payment Option View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="915"/>
+            <point key="canvasLocation" x="407" y="831"/>
         </scene>
         <!--Stored Card View Controller-->
         <scene sceneID="xKZ-vP-vtd">
